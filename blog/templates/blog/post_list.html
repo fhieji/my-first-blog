@@ -5,20 +5,17 @@
     <title>Django girls</title>
 </head>
 <body>
-    <div>
-        <h1><a href="/">Gjango girls blog</a></h1>
-    </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
+{% for post in posts %}
     <div>
-        <p>published: 14.06.2014, 12:14</p>
-        <h2><a href="">My first post</a></h2>
-        <p>こんにちは</p>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-        <p>公開日: 2014/06/13, 12:33</p>
-        <h2><a href="'"></a></h2>
-    </div>
+{% endfor %}
     <p>Hi there</p>
     <p>It works</p>
 </body>
